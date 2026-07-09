@@ -21,22 +21,33 @@ const COLORS = [
   "#EF4444",
 ];
 
-function RegionChart() {
+function RegionChart({ darkMode }) {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 h-[450px]">
-
-      <h2 className="text-2xl font-bold text-gray-800">
+    <div
+      className={`rounded-2xl shadow-sm border p-6 h-[450px] transition-all duration-300 ${
+        darkMode
+          ? "bg-gray-900 border-gray-700"
+          : "bg-white border-gray-200"
+      }`}
+    >
+      <h2
+        className={`text-2xl font-bold ${
+          darkMode ? "text-white" : "text-gray-800"
+        }`}
+      >
         Region Cost Distribution
       </h2>
 
-      <p className="text-gray-500 mb-6">
+      <p
+        className={`mb-6 ${
+          darkMode ? "text-gray-400" : "text-gray-500"
+        }`}
+      >
         Cloud spend across active regions.
       </p>
 
       <ResponsiveContainer width="100%" height="85%">
-
         <PieChart>
-
           <Pie
             data={data}
             dataKey="value"
@@ -52,14 +63,22 @@ function RegionChart() {
             ))}
           </Pie>
 
-          <Tooltip />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: darkMode ? "#111827" : "#ffffff",
+              border: "1px solid #4B5563",
+              borderRadius: "12px",
+              color: darkMode ? "#ffffff" : "#111827",
+            }}
+          />
 
-          <Legend />
-
+          <Legend
+            wrapperStyle={{
+              color: darkMode ? "#E5E7EB" : "#374151",
+            }}
+          />
         </PieChart>
-
       </ResponsiveContainer>
-
     </div>
   );
 }
