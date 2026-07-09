@@ -1,0 +1,12 @@
+date,region,service,cost,cpu_utilization,memory_utilization
+2026-07-01,us-east-1,EC2,250,18,25
+2026-07-01,us-east-1,RDS,120,45,60
+2026-07-01,us-east-1,S3,35,0,0
+2026-07-02,us-east-1,EC2,260,20,28
+2026-07-02,us-east-1,RDS,122,48,62
+2026-07-02,us-east-1,S3,38,0,0
+2026-07-03,us-east-1,EC2,620,14,20
+2026-07-03,us-east-1,RDS,125,50,65
+2026-07-03,us-east-1,S3,40,0,0
+2026-07-03,us-west-2,EC2,180,65,72
+2026-07-03,eu-central-1,EC2,140,80,85
